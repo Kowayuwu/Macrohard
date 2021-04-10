@@ -7,6 +7,7 @@ import os
 import sys
 import time
 
+
 root = Tk()
 root.title('NAME')
 
@@ -68,6 +69,9 @@ def rating_input_submit(event):
 		amenities_prompt.grid(row=0, column=0, padx=5, pady=5)
 		EoB_prompt = Label(criteria_frame_EoB, width=25, text='How satisfied were you with the \n procedure for booking the hotel?', anchor=W)
 		EoB_prompt.grid(row=0, column=0, padx=5, pady=5)
+
+
+
 
 		# create radiobuttons
 		satisfaction_levels = [
@@ -142,7 +146,7 @@ def rating_input_submit(event):
 			user_profile['amenities'] = user_profile['amenities'] + abs(amenities_num)
 			user_profile['ease of booking'] = user_profile['ease of booking'] + abs(EoB_num)
 				
-			print(user_profile)
+			# print(user_profile)
 
 # ------------------------- insert values into database and personal profile!
 
@@ -242,11 +246,17 @@ def search(a):
         if max < match:
             max = match
             rel_hotel = ind
+
     if rel_hotel:
         selected_msg = Label(user_review_frame, text='You have selected: ' + rel_hotel)
         selected_msg.grid(row=2, column=0, columnspan=2)
         global hotel_being_reviewed
         hotel_being_reviewed = rel_hotel
+    else:
+    	hotel_being_reviewed = 'Sorry, we could not find any similar hotels, please try again'
+    	cannot_find_msg = Label(user_review_frame, text=hotel_being_reviewed)
+    	cannot_find_msg.grid(row=2, column=0, columnspan=2)
+    	
 
 # --------------------can add a user verification option if time permits
 
