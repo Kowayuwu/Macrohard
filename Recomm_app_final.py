@@ -132,11 +132,11 @@ def login():
 			var5.set("VS")
 
 			for level, syms, row_num in satisfaction_levels:
-				Radiobutton(criteria_frame_location, text=level, variable=var1, value=syms, bg='grey23', activeforeground='white', activebackground='black').grid(row=row_num, column=0)
-				Radiobutton(criteria_frame_hospitality, text=level, variable=var2, value=syms, bg='grey23', activeforeground='white', activebackground='black').grid(row=row_num, column=0)
-				Radiobutton(criteria_frame_cleaniness, text=level, variable=var3, value=syms, bg='grey23', activeforeground='white', activebackground='black').grid(row=row_num, column=0)
-				Radiobutton(criteria_frame_amenities, text=level, variable=var4, value=syms, bg='grey23', activeforeground='white', activebackground='black').grid(row=row_num, column=0)
-				Radiobutton(criteria_frame_EoB, text=level, variable=var5, value=syms, bg='grey23', activeforeground='white', activebackground='black').grid(row=row_num, column=0)
+				Radiobutton(criteria_frame_location, text=level, variable=var1, value=syms, bg='grey23', fg='white', activeforeground='white', activebackground='grey23', selectcolor='grey23').grid(row=row_num, column=0)
+				Radiobutton(criteria_frame_hospitality, text=level, variable=var2, value=syms, bg='grey23', fg='white', activeforeground='white', activebackground='grey23', selectcolor='grey23').grid(row=row_num, column=0)
+				Radiobutton(criteria_frame_cleaniness, text=level, variable=var3, value=syms, bg='grey23', fg='white', activeforeground='white', activebackground='grey23', selectcolor='grey23').grid(row=row_num, column=0)
+				Radiobutton(criteria_frame_amenities, text=level, variable=var4, value=syms, bg='grey23', fg='white', activeforeground='white', activebackground='grey23', selectcolor='grey23').grid(row=row_num, column=0)
+				Radiobutton(criteria_frame_EoB, text=level, variable=var5, value=syms, bg='grey23', fg='white', activeforeground='white', activebackground='grey23', selectcolor='grey23').grid(row=row_num, column=0)
 
 			# gets all the symbols for whichever radiobutton is selected for each category
 			def submit_satisfaction():
