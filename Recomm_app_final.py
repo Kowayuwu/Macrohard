@@ -374,7 +374,7 @@ def login():
 		
 	    # showing the final personalized rating for the user
 		final_give_rating /= ((i+1)*i)
-		showing_num = tk.Label(get_review_frame, text = str(final_give_rating), fg='gold', bg = 'grey23', font=('times','18'))
+		showing_num = tk.Label(get_review_frame, text = str(round(final_give_rating, 1)), fg='gold', bg = 'grey23', font=('times','18'))
 		showing_num.place(x=265,y=70)
 		
 	    # get comments about the hotel from the csv  
@@ -391,7 +391,7 @@ def login():
 		show_comment3 = tk.Label(root, text = comment[2], fg='white', bg = 'grey23', font=('times','12'))
 		show_comment3.place(x=260, y=290)
 
-	r2_get_rating_btn = Button(get_review_frame, text='Get Personalize Rating', bg='grey50', fg='white', command=lambda: give_rating())
+	r2_get_rating_btn = Button(get_review_frame, text='Get Personalized Rating', bg='grey50', fg='white', command=lambda: give_rating())
 	r2_get_rating_btn.grid(row=4, column=1)
 
 login_btn = Button(login_frame, text='Login', command=login, bg='grey50', fg='white')
